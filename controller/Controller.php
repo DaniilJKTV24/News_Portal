@@ -50,5 +50,6 @@ class Controller {
     $arr = Comments::getCommentsCountNewsByID($newsid);
     ViewComments::CommentsCountWithAncor($arr);
   }
+  
 }
 ?>
