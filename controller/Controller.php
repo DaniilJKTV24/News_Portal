@@ -47,9 +47,9 @@ class Controller {
   }
 
   public static function CommentsCountWithAncor($newsid) {
-    $arr = Comments::getCommentsCountNewsByID($newsid);
+    $arr = Comments::getCommentsCountByNewsID($newsid);
     ViewComments::CommentsCountWithAncor($arr);
   }
-  
+
 }
 ?>
