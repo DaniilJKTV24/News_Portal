@@ -11,11 +11,13 @@ class ViewNews {
   }
 
   public static function AllNews($arr) {
+    echo '<ul>';
     foreach($arr as $value) {
       echo '<li>' .$value['title'];
       Controller::CommentsCount($value['id']);
-      echo '<a href="news?id=' .$value['id']. '">Edasi</a></li><br>';
+      echo '<a href="news?id=' .$value['id']. '">Edasi</a></li>';
     }
+    echo '</ul>';
   }
 
   public static function ReadNews($n) {

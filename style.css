@@ -197,3 +197,7 @@ h1{
 th{
     text-align: center;
 }
+
+.divBox li {
+  margin: 16px 0;
+}
