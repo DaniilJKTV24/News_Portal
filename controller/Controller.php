@@ -30,5 +30,11 @@ class Controller {
     include_once 'view/error404.php';
   }
   
+  public static function InsertComment($c, $id) {
+    Comments::insertComment($c, $id);
+    //self::NewsByID($id);
+    header('Location:news?id=' .$id. '#ctable');
+  }
+
 }
 ?>
