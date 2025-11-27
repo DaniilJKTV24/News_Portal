@@ -44,7 +44,13 @@
       }
       ?>
 
-      <div id="content" style="padding-top: 20px;"></div>
+      <div id="content" style="padding-top: 20px;">
+
+        <?php
+        echo $content;
+        ?>
+
+      </div>
 
       <footer class="footer">
         <p>&copy; 2025 Design Admin Dashboard<i class="fa fa-child"></i></p>
