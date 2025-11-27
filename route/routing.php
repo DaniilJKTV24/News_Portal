@@ -21,6 +21,13 @@
     $response = Controller::InsertComment($_GET['comment'], $_GET['id']);
   }
 
+  elseif ($path == 'registerForm') {
+    $response = Controller::registerForm();
+  }
+  elseif ($path == 'registerConfirmation') {
+    $response = Controller::registerUser();
+  }
+
   else {
     $response = Controller::error404();
   }

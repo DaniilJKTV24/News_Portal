@@ -51,5 +51,12 @@ class Controller {
     ViewComments::CommentsCountWithAncor($arr);
   }
 
+  public static function registerForm() {
+    include_once('view/registerForm.php');
+  }
+  public static function registerUser() {
+    $result = Register::registerUser();
+    include_once('view/registerConfirmation.php');
+  }
 }
 ?>
