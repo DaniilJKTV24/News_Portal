@@ -20,7 +20,7 @@ class adminModel {
             $password = $_POST['password'];
             if ($loginEmail == $item['email'] && password_verify($password, $item['password'])) {
               $_SESSION['sessionId'] = session_id();
-              $_SESSION['useId'] = $item['id'];
+              $_SESSION['userId'] = $item['id'];
               $_SESSION['name'] = $item['username'];
               $_SESSION['status'] = $item['status'];
               $login=true;
