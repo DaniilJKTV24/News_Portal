@@ -13,7 +13,7 @@ class Register {
       $password = $_POST['password'];
       $confirm = $_POST['confirm'];
       if (!$password || !$confirm || mb_strlen($password) < 6) {
-        $errorString.="Password should be longer that 6 symbols<br />";
+        $errorString.="Password should be longer than 6 symbols<br />";
       }
       if ($password!=$confirm) {
         $errorString.="Passwords do not match<br />";
@@ -22,7 +22,7 @@ class Register {
         $passwordHash = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $date = Date("Y-m-d");
 
-        $sql = "INSERT INTO `users` (`id`, `username`, `email`, `password`, `status`, `registration_date`, `pass`) VALUES (NULL, '$name', '$email', '$passwordHash', 'user', '$date', '$password')";
+        $sql = "INSERT INTO `users` (`id`, `username`, `job`, `email`, `login`, `password`, `status`, `registration_date`, `pass`) VALUES (NULL, '$name', 'Portal user', '$email', 'user', '$passwordHash', 'user', '$date', '$password')";
         $db = new Database();
         $item = $db->executeRun($sql);
         if ($item) {
