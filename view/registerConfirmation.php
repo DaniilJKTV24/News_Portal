@@ -7,7 +7,7 @@ if (isset($result)) {
     ?>
     <div class="container">
       <div class="alert alert-info">
-        <strong>User added.</strong>
+        <strong>User added</strong>
         <a href="admin/"> Dashboard</a>
       </div>
     </div>
