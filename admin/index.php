@@ -4,6 +4,7 @@ session_start();
 
   include_once('adminModel/adminModel.php');
   include_once('adminModel/adminModelNews.php');
+  include_once('adminModel/adminModelCategory.php');
 
   include_once('adminController/adminController.php');
   include_once('adminController/adminControllerNews.php');

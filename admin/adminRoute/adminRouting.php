@@ -16,8 +16,15 @@ elseif ($path == 'logout') {
   $response = adminController::logoutAction();
 }
 
-elseif ($path=='adminNews') {
+elseif ($path == 'adminNews') {
   $response = adminControllerNews::NewsList();
+}
+
+elseif ($path == 'addNews') {
+  $response = adminControllerNews::addNewsForm();
+}
+elseif ($path == 'addNewsResult') {
+  $response = adminControllerNews::addNewsResult();
 }
 
 else {
