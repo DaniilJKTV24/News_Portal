@@ -27,6 +27,13 @@ elseif ($path == 'addNewsResult') {
   $response = adminControllerNews::addNewsResult();
 }
 
+elseif ($path == 'editNews' && isset($_GET['id'])) {
+  $response = adminControllerNews::editNewsForm($_GET['id']);
+}
+elseif ($path == 'editNewsResult' && isset($_GET['id'])) {
+  $response = adminControllerNews::editNewsResult($_GET['id']);
+}
+
 else {
   // Page does not exist
   $response = adminController::error404();

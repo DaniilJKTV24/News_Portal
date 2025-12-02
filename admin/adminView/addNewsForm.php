@@ -63,7 +63,7 @@ ob_start();
           <tr>
             <td>
               <button type="submit" class="btn btn-primary" name="save">
-                <span class="glyphicon glyphicon-plus">Save</span>
+                <span class="glyphicon glyphicon-plus"></span> Save
               </button>
               <a href="adminNews" class="btn btn-large btn-success">
                 <i class="glyphicon glyphicon-backward"></i> &nbsp; Back to List
