@@ -61,7 +61,7 @@ ob_start();
               <div>
 
                 <?php
-                echo '<img src="data:image/jpeg;base64,' .base64_decode($details['picture']). '" width=150 />';
+                echo '<img src="data:image/jpeg;base64,' .base64_encode($details['picture']). '" width=150 />';
                 ?>
 
               </div>
