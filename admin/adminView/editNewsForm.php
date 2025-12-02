@@ -3,7 +3,7 @@ ob_start();
 ?>
 <div class="container" style="min-height:400px;">
   <div class="col-md-11">
-    <h2>Add News Article</h2>
+    <h2>Edit News Article</h2>
 
     <?php
     if (isset($test)) {
@@ -11,7 +11,7 @@ ob_start();
         ?>
 
         <div class="alert alert-info">
-          <strong>Article is added. </strong><a href="adminNews"> News List</a>
+          <strong>Article is edited. </strong><a href="adminNews"> News List</a>
         </div>
 
         <?php
@@ -20,7 +20,7 @@ ob_start();
         ?>
 
         <div class="alert alert-warning">
-          <strong>Error adding article! </strong><a href="adminNews"> News List</a>
+          <strong>Error editing article! </strong><a href="adminNews"> News List</a>
         </div>
 
         <?php
@@ -29,15 +29,15 @@ ob_start();
     else {
       ?>
 
-      <form method="POST" action="addNewsResult" enctype="multipart/form-data">
+      <form method="POST" action="editNewsResult?id=<?php echo $id; ?>" enctype="multipart/form-data">
         <table class="table table-bordered">
           <tr>
             <td>News Article title</td>
-            <td><input type="text" name="title" class="form-control" required></td>
+            <td><input type="text" name="title" class="form-control" required value="<?php echo $details['title']; ?>"></td>
           </tr>
           <tr>
             <td>News Article text</td>
-            <td><textarea rows="5" name="text" class="form-control" required></textarea></td>
+            <td><textarea rows="5" name="text" class="form-control" required><?php echo $details['text'] ?></textarea></td>
           </tr>
           <tr>
             <td>Category</td>
@@ -46,10 +46,25 @@ ob_start();
 
                 <?php
                 foreach ($arr as $row) {
-                  echo '<option value="' .$row['id']. '">' .$row['name']. '</option>';
+                  echo '<option value="' .$row['id']. '"';
+                    if ($row['id'] == $details['category_id']) echo 'selected';
+                  echo '>' .$row['name']. '</option>';
                 }
                 ?>
+
               </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Old Picture</td>
+            <td>
+              <div>
+
+                <?php
+                echo '<img src="data:image/jpeg;base64,' .base64_decode($details['picture']). '" width=150 />';
+                ?>
+
+              </div>
             </td>
           </tr>
           <tr>
@@ -63,7 +78,7 @@ ob_start();
           <tr>
             <td colspan="2">
               <button type="submit" class="btn btn-primary" name="save">
-                <span class="glyphicon glyphicon-plus"></span> Save
+                <span class="glyphicon glyphicon-plus"></span> Edit
               </button>
               <a href="adminNews" class="btn btn-large btn-success">
                 <i class="glyphicon glyphicon-backward"></i> &nbsp; Back to List
