@@ -15,6 +15,11 @@ elseif ($path == 'logout') {
   // Logout
   $response = adminController::logoutAction();
 }
+
+elseif ($path=='adminNews') {
+  $response = adminControllerNews::NewsList();
+}
+
 else {
   // Page does not exist
   $response = adminController::error404();
