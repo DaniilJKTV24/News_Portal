@@ -20,10 +20,10 @@ class adminControllerNews {
     $details = adminModelNews::getNewsDetails($id);
     include_once('adminView/editNewsForm.php');
   }
-  public static function aditNewsResult($id) {
+  public static function editNewsResult($id) {
     $test = adminModelNews::getEditNews($id);
     include_once('adminView/editNewsForm.php');
   }
-  
+
 }
 ?>
