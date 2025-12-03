@@ -25,5 +25,15 @@ class adminControllerNews {
     include_once('adminView/editNewsForm.php');
   }
 
+  public static function deleteNewsForm($id) {
+    $arr = adminModelCategory::getCategoryList();
+    $details = adminModelNews::getNewsDetails($id);
+    include_once('adminView/deleteNewsForm.php');
+  }
+  public static function deleteNewsResult($id) {
+    $test = adminModelNews::getDeleteNews($id);
+    include_once('adminView/deleteNewsForm.php');
+  }
+
 }
 ?>
