@@ -4,14 +4,14 @@ class ViewComments {
   public static function CommentsForm() {
     echo '<form action="insertcomment">
     <input type="hidden" name="id" value="' .$_GET['id']. '">
-    Teie kommentaar: <input type="text" name="comment">
-    <input type="submit" value="Saada">
+    Your comment: <input type="text" name="comment">
+    <input type="submit" value="Send">
     </form>';
   }
 
   public static function CommentsByNews($arr) {
     if ($arr!=null) {
-      echo '<table id="ctable"><th>Kommentaar</th><th>Kuupäev</th>';
+      echo '<table id="ctable"><th>Comment</th><th>Date</th>';
       foreach($arr as $value) {
         echo '<tr><td>' .$value['text']. '</td><td>' .$value['date']. '</td></tr>';
       }

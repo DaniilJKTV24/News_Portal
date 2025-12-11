@@ -6,7 +6,7 @@ class ViewNews {
       echo '<img src="data:image/jpeg;base64, ' .base64_encode( $value['picture'] ). '" width=150 /><br>';
       echo "<h2>" .$value['title']. "</h2>";
       Controller::CommentsCount($value['id']);
-      echo '<a href="news?id=' .$value['id']. '">Edasi</a><br>';
+      echo '<a href="news?id=' .$value['id']. '">Details</a><br>';
     }
   }
 
@@ -15,7 +15,7 @@ class ViewNews {
     foreach($arr as $value) {
       echo '<li>' .$value['title'];
       Controller::CommentsCount($value['id']);
-      echo '<a href="news?id=' .$value['id']. '">Edasi</a></li>';
+      echo '<a href="news?id=' .$value['id']. '">Details</a></li>';
     }
     echo '</ul>';
   }

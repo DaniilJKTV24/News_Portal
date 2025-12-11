@@ -1,7 +1,7 @@
 <?php
 ob_start();
 ?>
-<h1>Kõik uudised</h1>
+<h1>All News</h1>
 <br>
 <?php
 ViewNews::AllNews($arr);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>NEWSPORTAL</title>
     <link rel="stylesheet"
@@ -14,7 +14,7 @@
 
     <nav class="one">
       <ul class="topmenu">
-        <li><a href="#">Kategooriad<i class="fa fa-angle-down"></i></a>
+        <li><a href="#">Categories<i class="fa fa-angle-down"></i></a>
           <ul class="submenu">
           <?php
             Controller::AllCategory();
@@ -22,7 +22,7 @@
           </ul>
         </li>
         <li><a href="iwww">Info</a></li>
-        <li><a href="./">Stardileht</a></li>
+        <li><a href="./">Main Page</a></li>
         <li><a href="registerForm">Register</a></li>
         <!-- <div class="pull-right">
           <li>
