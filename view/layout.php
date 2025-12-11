@@ -24,14 +24,14 @@
         <li><a href="iwww">Info</a></li>
         <li><a href="./">Stardileht</a></li>
         <li><a href="registerForm">Register</a></li>
-        <div class="pull-right">
+        <!-- <div class="pull-right">
           <li>
             <form action="search">
               <input type="text" name="otsi">
               <input type="submit" value="Otsi">
             </form>
           </li>
-        </div>
+        </div> -->
       </ul>
     </nav>
 

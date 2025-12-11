@@ -23,14 +23,16 @@ NewsPortal is a website that provides news articles for public reading. The appl
 - **Admin Page:** Administrators can add, edit, and delete news articles.  
 
 **Manual Structure:**  
-This manual covers the following sections:  
-1. General Information – System requirements, supported browsers, and limitations.  
-2. Getting Started – How to access and navigate the website.  
-3. Interface and Navigation – Overview of menus, pages, and icons.  
-4. Core Functions – Reading articles and managing content (for admins).  
-5. Troubleshooting – Common issues and solutions.  
-6. Security and Privacy – Guidelines for users and administrators.  
-7. Support and Resources – Contact information and additional materials.
+This manual is organized into the following sections:
+
+1. **General Information** – System requirements, supported browsers, and any known limitations.  
+2. **Getting Started** – Instructions for accessing the website, registering, and logging in.  
+3. **Interface and Navigation** – Overview of main pages, menus, and navigation elements.  
+4. **Core Functions / Tasks** – Step-by-step instructions for reading articles and managing content (for administrators).  
+5. **Error Messages and Troubleshooting** – Common issues, alerts, and guidance for resolving problems.  
+6. **Security and Privacy** – Guidelines for password policies, personal data handling, and secure usage.  
+7. **Support and Resources** – Contact information, helpful documentation, and ways to report issues or provide feedback.  
+8. **Appendices (Optional)** – Includes glossary of terms, additional configuration notes.  
 
 ## 2. General Information
 
@@ -292,10 +294,11 @@ At the top of the page, there is a navigation panel with the following links:
 - Comments (if any) are displayed below the article.  
 
 **Example:**  
-- You see a news article titled “Technology Update” and click **Details** to read more about it.  
+- You see a news article titled “Tech Giant Releases New Smartphone” and click **Details** to read more about it.  
 
 **Screenshot:**  
-- ![Article Details Page](path/to/screenshot.png)  
+![Main Page](screenshots/main-page.png)  
+*Figure 5.1: Main Page showing the latest news articles and navigation panel.*
 
 ---
 
@@ -313,7 +316,8 @@ At the top of the page, there is a navigation panel with the following links:
 - You want to read only Technology news. Click the **Technology** category to filter articles accordingly.  
 
 **Screenshot:**  
-- ![Category Selection Example](path/to/screenshot.png)
+![Category Selection Example](screenshots/category-selection.png)  
+*Figure 5.2: Category list expanded with Technology selected.*
 
 ---
 
@@ -332,7 +336,8 @@ At the top of the page, there is a navigation panel with the following links:
 - You read an article about a local event and write: “Looking forward to attending!”  
 
 **Screenshot:**  
-- ![Comment Field Example](path/to/screenshot.png)  
+![Comment Field Example](screenshots/add-comment.png)  
+*Figure 5.3: Comment field under the article with the Send button.*
 
 **Note:**  
 - All users can add comments.
@@ -351,7 +356,8 @@ At the top of the page, there is a navigation panel with the following links:
 - You can now log in via the admin login page.  
 
 **Screenshot:**  
-- ![Registration Form](path/to/screenshot.png)  
+![Registration Form](screenshots/registration-form.png)  
+*Figure 5.4: Registration form with all required fields and Register button.*
 
 **Note:**  
 - Registration currently does not provide additional features for regular users.
@@ -369,10 +375,11 @@ At the top of the page, there is a navigation panel with the following links:
 - You are redirected to the Admin Panel.  
 
 **Screenshot:**  
-- ![Admin Login Page](path/to/screenshot.png)  
+![Admin Login Page](screenshots/admin-login.png)  
+*Figure 5.5: Admin login page with email and password fields and Enter button.*
 
 **Note:**  
-- Only accounts with admin privileges can access the admin panel.  
+- Only accounts with admin privileges can access the admin panel features.  
 
 ---
 
@@ -393,7 +400,8 @@ At the top of the page, there is a navigation panel with the following links:
 - The new article appears in the news articles list.  
 
 **Screenshot:**  
-- ![Add News Article Form](path/to/screenshot.png)  
+![Add News Article Form](screenshots/add-news.png)  
+*Figure 5.6: Add News Article form with fields for title, text, category, and picture.*
 
 ---
 
@@ -414,7 +422,8 @@ At the top of the page, there is a navigation panel with the following links:
 - The article is updated in the news articles list.  
 
 **Screenshot:**  
-- ![Edit News Article Form](path/to/screenshot.png)  
+![Edit News Article Form](screenshots/edit-news.png)  
+*Figure 5.7: Edit News Article form showing old picture display and Edit button.*
 
 ---
 
@@ -423,14 +432,165 @@ At the top of the page, there is a navigation panel with the following links:
 **Steps:**  
 1. From the Admin Panel, click **News Articles List**.  
 2. Find the article you want to delete and click **DELETE**.  
-3. Confirm deletion if prompted.  
+3. Confirm deletion when prompted.  
 
 **Expected Result:**  
 - The article is removed from the news articles list.  
 
 **Screenshot:**  
-- ![Delete News Article Form](path/to/screenshot.png)  
+![Delete News Article Form](screenshots/delete-news.png)  
+*Figure 5.8: Delete News Article form showing old picture and Delete button.*
 
 **Warning:**  
 - Deletion is permanent. Once an article is deleted, it cannot be recovered.
 
+## 6. Error Messages and Troubleshooting
+
+This section lists common errors and alerts that users and administrators may encounter, along with their causes and solutions.
+
+---
+
+### 6.1 User Errors
+
+| Message / Alert | Cause | Solution / Notes |
+|-----------------|-------|-----------------|
+| **Cannot access the website** | Local server is not running or project folder not placed correctly. | Start the local server (XAMPP/WAMP/Laravel) and ensure the project folder is in `htdocs` or `www`. |
+| **Form validation errors** | Missing required fields in the registration form or passwords don’t match. | Fill all fields correctly; ensure password and confirm password match. |
+| **Incorrect username or password** | Login credentials are invalid. | Double-check the email and password. As administrator use the admin account from the sample database. |
+| **Already logged-in user redirected** | A session for the user already exists. | You are automatically redirected to the Admin Panel. Log out first if you want to switch accounts. |
+| **404 Page Not Found** | The user navigated to a page that does not exist or is unavailable (e.g., Info page). | Use navigation panel links to go to a valid page. |
+
+---
+
+### 6.2 Admin Errors / Alerts
+
+| Message / Alert | Cause | Solution / Notes |
+|-----------------|-------|-----------------|
+| **Article is edited** | The article was successfully updated in the database. | Click **News List** to return to the list of articles. |
+| **Error editing article!** | Database issue or missing required fields. | Ensure all required fields are filled, then try again. Contact the administrator if the problem persists. |
+| **Article deleted** | The article was successfully removed. | Verify the article is no longer in the News List. |
+| **Error deleting article!** | Database issue or invalid article ID. | Retry the deletion or contact the administrator. |
+| **Add News Article success** | New article added successfully. | Check the News List to see the new article. |
+| **Add News Article failure** | Database problem or missing required fields. | Fill all required fields and try again. Check server/database configuration if the problem persists. |
+| **404 Page Not Found (Admin)** | Admin tried to access a page that is not implemented yet (e.g., Categories or Info). | Use available navigation links or wait until the feature is implemented. |
+
+---
+
+### 6.3 General Troubleshooting Tips
+
+- Refresh the page if content does not load correctly.  
+- Clear the browser cache if changes are not appearing.  
+- Verify that **images and scripts** exist in the correct `public/` folders.  
+- Ensure the database connection is working if articles fail to load.  
+- Use the navigation panel to avoid unavailable routes.  
+- Make sure your account has **admin privileges** for admin tasks.  
+
+---
+
+## 7. Security and Privacy
+
+This section explains password policies, how personal data is handled, and recommendations for secure usage of the NewsPortal application.
+
+---
+
+### 7.1 Password Policies and Account Security
+
+- Passwords, names and emails are required for all registered users and administrators.  
+- Passwords are **stored securely in hashed form** in the database.  
+- Users should choose **strong passwords**: at least 8 characters, combining letters, numbers, and symbols.  
+- Avoid sharing your password with anyone.  
+- Administrators should always **log out** after completing tasks using the **Exit** link in the admin panel.  
+- Avoid using the same password on multiple websites.
+
+---
+
+### 7.2 Handling Personal and Sensitive Data
+
+- The application stores user data provided during registration:  
+  - `name`  
+  - `email` (must be **unique** in the database)  
+  - `password` (hashed in the database)  
+- Comments posted under news articles may contain personal opinions. Users should **avoid sharing sensitive information**.  
+- Passwords are hashed and cannot be viewed in plain text.  
+- Access to user data in the database is restricted to administrators.  
+
+---
+
+### 7.3 Recommendations for Secure Usage and Backup
+
+- Regularly **back up the database**, especially when adding real content or users.  
+- Ensure project files and the local server environment are **kept secure**.  
+- Regular users can open the admin page, but only authorized administrators can/should access the admin panel features.  
+- Avoid exposing the localhost server to the public unless proper security measures are in place.  
+- Keep libraries (e.g., Bootstrap, Font Awesome) up-to-date to include security patches.  
+
+---
+
+### 7.4 Compliance and Regulatory Notes
+
+- NewsPortal is a **sample project**; no real user data is collected in production.  
+- For real-world deployment, comply with **local data protection regulations** (e.g., GDPR in the EU).  
+- Inform users about how their personal data is collected, stored, and used.
+
+---
+
+> **Tip:** Even though this is a sample project, following these guidelines ensures that the application remains secure and user data is protected if adapted for real-world use.  
+
+## 8. Support and Resources
+
+This section provides guidance on how users and administrators can get support or access additional resources.
+
+---
+
+### 8.1 Contact Information
+
+- For questions or issues related to NewsPortal, contact the project author:  
+  - **Email:** daniil.peretjaka@ivkhk.ee  
+
+> Note: As this is a sample project, real-time support is not available.
+
+---
+
+### 8.2 Documentation and Tutorials
+
+- This user manual contains all the information needed to navigate and use the application.  
+- Additional resources:  
+  - [PHP Official Documentation](https://www.php.net/docs.php)  
+  - [Bootstrap Documentation](https://getbootstrap.com/docs/)  
+  - [Font Awesome Icons](https://fontawesome.com/)  
+
+---
+
+### 8.3 Reporting Issues and Feedback
+
+- Users and administrators can report bugs or provide feedback via email to the project author.  
+- Include details such as:  
+  - Steps to reproduce the issue  
+  - Screenshots of any errors or unexpected behavior  
+  - Browser and system information (if relevant)
+
+## 9. Appendices (Optional)
+
+The appendices provide additional reference material for administrators, developers, or advanced users. This section is optional but may be useful for maintenance or future extensions.
+
+### 9.1 Glossary of Terms
+
+- **Admin Panel** – Section for administrators to manage news articles.  
+- **Article** – A news item published on the website, with title, text, category, image, and comments.  
+- **Category** – Label to group articles by topic (e.g., Sports, Technology, Politics).  
+- **Comment** – User-submitted feedback under an article.  
+- **Navigation Panel** – Menu at the top of the page for navigating different sections.  
+- **Register / Sign Up** – Process to create a new user account.  
+- **Session** – Temporary storage for tracking logged-in users.  
+- **Error 404** – Page not found when a user navigates to a non-existent page.  
+- **Public Folder (`public/`)** – Directory containing CSS, JavaScript, fonts, and other assets.  
+- **Hashing** – Process of converting a password into a secure, unreadable format.
+
+### 9.2 Additional Configuration or Scripting Instructions
+
+- **Database Configuration:** Adjust credentials in `Database.php` for your environment.  
+- **File Permissions:** Ensure `public/` folder files are readable by the web server.  
+- **Custom Scripts:** Additional JavaScript or PHP scripts can be added to the project.  
+- **Backup Recommendations:** Regularly back up the database and project files to prevent data loss.
+
+> Note: This section is optional and intended as a reference for developers or administrators extending the project.
