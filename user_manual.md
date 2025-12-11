@@ -134,36 +134,37 @@ This manual is organized into the following sections:
 3. **Project Files:**  
    - Place the project files in your web server’s root folder (e.g., `htdocs` for XAMPP).  
    - Ensure the folder structure is maintained:  
+
      ```
-    NewsPortal/
-    ├── admin/                   # Admin module
-    │   ├── controllers/         # Admin-specific controllers
-    │   ├── models/              # Admin-specific data models
-    │   ├── routes/              # Admin route definitions
-    │   ├── views/               # Admin templates/pages
-    │   ├── js/                  # Admin-side JavaScript files
-    │   ├── public/
-    │   │   ├── css/             # Admin CSS files
-    │   │   ├── fonts/           # Fonts used on admin pages
-    │   │   └── js/              # Additional admin JS
-    │   ├── .htaccess
-    │   └── index.php            # Entry point for Admin Panel
-    │
-    ├── controller/              # Main site controllers
-    ├── model/                   # Main site models
-    ├── view/                    # Main site templates/pages
-    ├── route/                   # Front-end route definitions
-    ├── inc/                     # Includes Database.php
-    │
-    ├── public/                  # Public assets for the main site
-    │   └── css/                 # Global styles (non-admin)
-    │
-    ├── sql/                     # Database schema and sample data
-    │
-    ├── .htaccess                # Root rewrite rules
-    ├── index.php                # Main entry point of the application
-    ├── style.css                # Core front-end stylesheet
-    └── user_manual.md           # Project user manual
+      NewsPortal/
+      ├── admin/                   # Admin module
+      │   ├── controllers/         # Admin-specific controllers
+      │   ├── models/              # Admin-specific data models
+      │   ├── routes/              # Admin route definitions
+      │   ├── views/               # Admin templates/pages
+      │   ├── js/                  # Admin-side JavaScript files
+      │   ├── public/
+      │   │   ├── css/             # Admin CSS files
+      │   │   ├── fonts/           # Fonts used on admin pages
+      │   │   └── js/              # Additional admin JS
+      │   ├── .htaccess
+      │   └── index.php            # Entry point for Admin Panel
+      │
+      ├── controller/              # Main site controllers
+      ├── model/                   # Main site models
+      ├── view/                    # Main site templates/pages
+      ├── route/                   # Front-end route definitions
+      ├── inc/                     # Includes Database.php
+      │
+      ├── public/                  # Public assets for the main site
+      │   └── css/                 # Global styles (non-admin)
+      │
+      ├── sql/                     # Database schema and sample data
+      │
+      ├── .htaccess                # Root rewrite rules
+      ├── index.php                # Main entry point of the application
+      ├── style.css                # Core front-end stylesheet
+      └── user_manual.md           # Project user manual
      ```
 
 4. **Configure Database Connection:**  
